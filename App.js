@@ -1,4 +1,5 @@
 import { StyleSheet, ImageBackground, SafeAreaView } from 'react-native';
+import {StatusBar} from 'expo-status-bar';
 import {useFonts} from 'expo-font'
 import AppLoading from "expo-app-loading";
 
@@ -48,18 +49,21 @@ export default function App() {
   }
 
   return (
-    <LinearGradient colors={[Color.primary700, Color.accent500]} style={styles.rootScreen}>
-      <ImageBackground
-        source={require('./assets/images/background.png')}
-        resizeMode="cover"
-        style={styles.rootScreen}
-        imageStyle={styles.backgroundImage}
-      >
-        <SafeAreaView style={styles.rootScreen}>
-          {screen}
-        </SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+    <>
+      <StatusBar style="light" />
+      <LinearGradient colors={[Color.primary700, Color.accent500]} style={styles.rootScreen}>
+        <ImageBackground
+          source={require('./assets/images/background.png')}
+          resizeMode="cover"
+          style={styles.rootScreen}
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>
+            {screen}
+          </SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   )
 }
 
