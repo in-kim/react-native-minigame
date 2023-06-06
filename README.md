@@ -20,15 +20,15 @@ yarn start
 ## Preview
 ### Android
 <div style="display:flex;">
-  <img src="./assets/preview/and-preview1.png" style="height: 400px;" />
-  <img src="./assets/preview/and-preview2.png" style="height: 400px" />
-  <img src="./assets/preview/and-preview3.png" style="height: 400px" />
+  <img src="./assets/preview/and-preview1.png" style="height: 350px;" />
+  <img src="./assets/preview/and-preview2.png" style="height: 350px;" />
+  <img src="./assets/preview/and-preview3.png" style="height: 350px;" />
 </div>
 
 ### Ios
 <div style="display:flex;">
-  <img src="./assets/preview/ios-preview1.png" style="height: 400px;" />
-  <img src="./assets/preview/ios-preview2.png" style="height: 400px" />
-  <img src="./assets/preview/ios-preview3.png" style="height: 400px" />
-  <img src="./assets/preview/ios-preview4.png" style="height: 400px" />
+  <img src="./assets/preview/ios-preview1.png" style="height: 350px;" />
+  <img src="./assets/preview/ios-preview2.png" style="height: 350px;" />
+  <img src="./assets/preview/ios-preview3.png" style="height: 350px;" />
+  <img src="./assets/preview/ios-preview4.png" style="height: 350px;" />
 </div>
