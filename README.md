@@ -11,7 +11,7 @@ yarn install
 ```
 3. android, Ios 앱 실행
 ```bash
-npm start
+npm run start
 # or
 yarn start
 ```
