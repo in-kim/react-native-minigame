@@ -1,4 +1,4 @@
-import {TextInput, View, Text, StyleSheet, Alert} from "react-native";
+import {TextInput, View, StyleSheet, Alert, useWindowDimensions, KeyboardAvoidingView, ScrollView} from "react-native";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import {useState} from "react";
 import Color from "../constans/color";
@@ -8,7 +8,7 @@ import InstructionText from "../components/ui/InstructionText";
 
 export default function StartGameScreen({onPickNumber}){
   const [enteredNumber, setEnteredNumber] = useState('');
-
+  const {height} = useWindowDimensions();
   const numberInputHandler = (enteredText) => {
     setEnteredNumber(enteredText)
   }
@@ -26,26 +26,35 @@ export default function StartGameScreen({onPickNumber}){
   const resetInputHandler = () => {
     setEnteredNumber('')
   }
+
+  const marginTopDistance = height > 380 ? 30 : 100;
   return (
-    <View style={styles.rootContainer}>
-      <Title>Guess My Number</Title>
-      <Card>
-        <InstructionText>Enter a Number</InstructionText>
-        <TextInput style={styles.inputNumber} maxLength={2} keyboardType="number-pad" autoCorrect={false} autoCapitalize="none" value={enteredNumber} onChangeText={numberInputHandler}/>
-        <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
-          </View>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={confirmInputHandler}n>Confirm</PrimaryButton>
-          </View>
+    <ScrollView style={styles.screen}>
+      <KeyboardAvoidingView  style={styles.screen} behavior="position">
+        <View style={[styles.rootContainer, {marginTop: marginTopDistance}]}>
+          <Title>Guess My Number</Title>
+          <Card>
+            <InstructionText>Enter a Number</InstructionText>
+            <TextInput style={styles.inputNumber} maxLength={2} keyboardType="number-pad" autoCorrect={false} autoCapitalize="none" value={enteredNumber} onChangeText={numberInputHandler}/>
+            <View style={styles.buttonsContainer}>
+              <View style={styles.buttonContainer}>
+                <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+              </View>
+              <View style={styles.buttonContainer}>
+                <PrimaryButton onPress={confirmInputHandler}n>Confirm</PrimaryButton>
+              </View>
+            </View>
+          </Card>
         </View>
-      </Card>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
+  screen:{
+    flex:1,
+  },
   rootContainer:{
     flex: 1,
     alignItems:"center",

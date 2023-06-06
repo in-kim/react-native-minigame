@@ -1,5 +1,6 @@
 import {View, StyleSheet} from "react-native";
 import Color from "../../constans/color";
+import {fn} from '../../assets/util/common'
 
 export default function Card({children}){
   return (
@@ -10,7 +11,7 @@ export default function Card({children}){
 const styles = StyleSheet.create({
   inputContainer: {
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: fn.accordingDeviceSize(18, 36),
     padding: 16,
     marginHorizontal: 25,
     backgroundColor: Color.primary800,
