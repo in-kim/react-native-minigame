@@ -12,7 +12,7 @@ export default function GameOverScreen({roundsNumber, userNumber, onGameReset}){
   }
 
   if(height > 400){
-    imageSize = 80
+    imageSize = 300
   }
 
   const imageStyle = {
